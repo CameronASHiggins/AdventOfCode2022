@@ -3,7 +3,7 @@ package org.example;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashSet;
+//import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,10 +11,8 @@ public class Assignments {
 
     public void start(){
 
-        List<String> eachPair = new ArrayList<>();
         List<String> firstElf = new ArrayList<>();
         List<String> secondElf = new ArrayList<>();
-
 
         try {
             File myObj = new File("src/main/resources/assignments.txt");
@@ -33,10 +31,10 @@ public class Assignments {
             e.printStackTrace();
         }
 
-        int firstElfInt1 = 0;
-        int firstElfInt2 = 0;
-        int secondElfInt1 = 0;
-        int secondElfInt2 = 0;
+        int firstElfInt1;
+        int firstElfInt2;
+        int secondElfInt1;
+        int secondElfInt2;
         int total = 0;
 
         for (int i = 0; i < firstElf.size(); i++) {
@@ -56,8 +54,9 @@ public class Assignments {
             }
 //this is for the second part
             for (int x: ass1) {
-                if (ass2.contains(x)){
+                if (ass2.contains(x)) {
                     doesOverlap = true;
+                    break;
                 }
             }
             if (doesOverlap){
@@ -70,7 +69,5 @@ public class Assignments {
         }
 
         System.out.println(total);
-
-
     }
 }
